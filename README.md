@@ -4,17 +4,17 @@ This template has been created by using CRA. It includes React Query, React Hook
 
 # Folder Structure
 
-Assets => Images, icons, svgs etc.
-Components => React components
-Config => Constant variables and Server side configs
-Hooks => React Hooks
-Navigator => Routes and route types
-Services => Rest API paths and types
-Stores => Global stores (Context API, Redux etc.)
-Theme => Style customization, SASS structre and Material UI Customization
-Utils => Helper methods
-Validations => Form schemas and value types
-Views => React components as routes (Website pages)
+Assets => Images, icons, svgs etc.<br/>
+Components => React components<br/>
+Config => Constant variables and Server side configs<br/>
+Hooks => React Hooks<br/>
+Navigator => Routes and route types<br/>
+Services => Rest API paths and types<br/>
+Stores => Global stores (Context API, Redux etc.)<br/>
+Theme => Style customization, SASS structre and Material UI Customization<br/>
+Utils => Helper methods<br/>
+Validations => Form schemas and value types<br/>
+Views => React components as routes (Website pages)<br/>
 
 ![alt text](https://i.ibb.co/xDg8njb/hierarchy.jpg)
 
