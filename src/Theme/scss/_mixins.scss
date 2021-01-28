@@ -1,29 +1,29 @@
 @mixin tiny-device {
-  @media (max-width: 639px) {
+  @media (max-width: $tiny-device-width) {
     @content;
   }
 }
 
 @mixin small-device {
-  @media (max-width: 959px) {
+  @media (max-width: $small-device-width) {
     @content;
   }
 }
 
 @mixin regular-device {
-  @media (max-width: 1199px) {
+  @media (max-width: $regular-device-width) {
     @content;
   }
 }
 
 @mixin big-device {
-  @media (max-width: 1599px) {
+  @media (max-width: $big-device-width) {
     @content;
   }
 }
 
 @mixin large-device {
-  @media (min-width: 2100px) {
+  @media (min-width: $large-device-width) {
     @content;
   }
 }
