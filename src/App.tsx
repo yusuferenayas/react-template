@@ -6,6 +6,8 @@ import {
   appContextInitialStates,
 } from "./Stores/AppContext/Reducer";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { ThemeProvider } from "@material-ui/core";
+import { materialUITheme } from "Theme/MaterialUITheme";
 
 const queryClient = new QueryClient();
 
@@ -25,7 +27,9 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <AppContextProvider value={appContextProvider}>
-        <Navigator />
+        <ThemeProvider theme={materialUITheme}>
+          <Navigator />
+        </ThemeProvider>
       </AppContextProvider>
     </QueryClientProvider>
   );

@@ -1,4 +1,4 @@
-import themeVariables from "./_variables.module.scss";
+import themeVariables from "./scss/_variables.module.scss";
 
 type ThemeVariables = {
   whiteColor: string;
