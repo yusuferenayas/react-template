@@ -149,7 +149,7 @@ BEM method can be used on class naming. Index SASS file should be imported on Co
 
 # Store
 
-There is one custom store in template. It's powered by Context API and provider. Can be found on Store/AppContext. Can be created new ones on project demands.
+There is one custom store in template. It's powered by Context API and provider. Can be found on Store/AppContext. You can create new ones depending on project requirments.
 
 ```
 // Reducer.tsx
