@@ -2,6 +2,23 @@
 
 This template has been created by using CRA. It includes React Query, React Hook Form, Typescript, SCSS and YUP validations.
 
+# Folder Structure
+
+Assets => Images, icons, svgs etc.
+Components => React components
+Config => Constant variables and Server side configs
+Hooks => React Hooks
+Navigator => Routes and route types
+Services => Rest API paths and types
+Stores => Global stores (Context API, Redux etc.)
+Theme => Style customization, SASS structre and Material UI Customization
+Utils => Helper methods
+Validations => Form schemas and value types
+Views => React components as routes (Website pages)
+
+![alt text](https://i.ibb.co/xDg8njb/hierarchy.jpg)
+
+
 # Theme
 
 ## Usage of Variables
@@ -81,6 +98,8 @@ export const materialUITheme = createMuiTheme({
 There are 5 mixins as initial. They manage responsive style properties. New mixins can be added here.
 
 ```
+// _mixins.scss
+
 @mixin tiny-device {
   @media (max-width: $tiny-device-width) {
     @content;
@@ -127,3 +146,39 @@ BEM method can be used on class naming. Index SASS file should be imported on Co
   }
 }
 ```
+
+# Store
+
+There is one custom store in template. It's powered by Context API and provider. Can be found on Store/AppContext. Can be created new ones on project demands.
+
+```
+// Reducer.tsx
+
+import { IAppContextActionTypes } from "./Actions";
+
+export interface IAppContextState {
+  authToken: string;
+}
+
+export const appContextInitialStates: IAppContextState = {
+  authToken: "",
+};
+
+export const appContextReducer = (
+  state: IAppContextState,
+  action: IAppContextActionTypes
+): IAppContextState => {
+  switch (action.type) {
+    case "SET_AUTH_TOKEN": {
+      return {
+        ...state,
+        authToken: action.authToken,
+      };
+    }
+
+    default:
+      return state;
+  }
+};
+```
+
