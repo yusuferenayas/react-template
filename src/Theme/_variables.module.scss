@@ -1,0 +1,11 @@
+@import "variables";
+
+:export {
+  whiteColor: $white-color;
+  darkColor: $dark-color;
+  lightColor: $light-color;
+  mediumColor: $medium-color;
+  alertColor: $alert-color;
+  lightBlackColor: $light-black-color;
+  blackColor: $black-color;
+}
