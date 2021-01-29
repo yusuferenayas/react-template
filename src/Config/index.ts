@@ -1,2 +1,2 @@
-export { baseURL, pathURls } from "./Service";
-export type { pathURLStrings } from "./Service";
+export { baseURL, pathURls } from "./ServiceConfig";
+export type { pathURLStrings } from "./ServiceConfig";
