@@ -352,7 +352,7 @@ type LoginSchemaInputs = {
 
 # Views
 
-Views(Containers) simply mean as routes. There are 2 view as initial. Home and Login components. View props has generic type from RouterComponentProps. Please check the code block.
+Views(Containers) simply mean as routes. There are 2 views as initial. Home and Login components. View props has generic type from RouterComponentProps. Please check the code block.
 
 ```
 // Login.tsx
