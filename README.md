@@ -43,7 +43,7 @@ export default Button;
 
 # Config
 
-Constant variables for example Rest API path can be defined here. New variables can be added according to project requirments.
+Constant variables for example Rest API path can be defined in this folder. New variables can be added according to project requirments.
 
 ```
 // ServiceConfig.ts
@@ -96,7 +96,7 @@ And getPersonData type should be using with react query.
 
 # Navigator
 
-React-router-dom is defined here. Every route path is being managed from this folder.
+React-router-dom is defined in this folder. Every route path is being managed from this folder.
 
 ```
 // Navigator/index.tsx
@@ -141,6 +141,46 @@ export const routes: RoutesType[] = [
   },
 ];
 
+```
+
+# Services
+
+Queries and Mutations are being defined in this folder. 
+
+```
+// GetPerson.ts
+
+import { axiosHelper } from "Services/AxiosHelper";
+
+const getPersonQuery = async () =>
+  (
+    await axiosHelper({
+      method: "get",
+      url: "people/1/",
+    })
+  ).data;
+
+export default getPersonQuery;
+```
+
+All requests are making via Axios. So making the structure more efficient, there is a wrapper which is called AxiosHelper. Url parameter of this wrapper is type of pathURLs and it's exported from Config folder. 
+
+```
+// AxiosHelper.ts
+
+import axios, { AxiosRequestConfig } from "axios";
+import { baseURL, pathURLStrings } from "Config";
+
+type AxiosConfig = {
+  url: pathURLStrings;
+  method: "get" | "post";
+  headers?: AxiosRequestConfig["headers"];
+  data?: {};
+} & AxiosRequestConfig;
+
+export const axiosHelper = async (config: AxiosConfig) => {
+  return await axios({ ...config, baseURL: baseURL });
+};
 ```
 
 # Store
@@ -267,6 +307,8 @@ There are 5 mixins as initial. They manage responsive style properties. New mixi
 BEM method can be used on class naming. Index SASS file should be imported on Component and View SASS files.
 
 ```
+// Login.scss
+
 @import "index.scss";
 
 #login {
@@ -276,5 +318,51 @@ BEM method can be used on class naming. Index SASS file should be imported on Co
   }
 }
 ```
+
+# Utils
+
+Utilities helper functions and methods can be defined in this folder.
+
+# Validations
+
+Yup validations and Form Schemas are being shared from this folder.
+
+```
+// LoginSchema.ts
+
+import * as yup from "yup";
+
+export const LoginSchema = yup.object().shape({
+  username: yup.string().required(),
+  password: yup.string().required(),
+});
+
+export type LoginSchemaInputs = yup.InferType<typeof LoginSchema>;
+```
+
+Yup.InferType inherits from schema. Its type will be like below one.
+
+```
+type LoginSchemaInputs = {
+    [x: string]: never;
+    username: string;
+    password: string;
+}
+```
+
+# Views
+
+Views(Containers) simply mean as routes. There are 2 view as initial. Home and Login components. View props has generic type from RouterComponentProps. Please check the code block.
+
+```
+// Login.tsx
+
+type LoginParams = {};
+type LoginProps = RouteComponentProps<LoginParams>;
+
+const Login: FunctionComponent<LoginProps> = () => {
+..
+```
+
 
 
