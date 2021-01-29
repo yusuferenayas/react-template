@@ -5,4 +5,4 @@ export const LoginSchema = yup.object().shape({
   password: yup.string().required(),
 });
 
-export type LoginSchemaInputs = yup.TypeOf<typeof LoginSchema>;
+export type LoginSchemaInputs = yup.InferType<typeof LoginSchema>;
