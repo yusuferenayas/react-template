@@ -149,7 +149,7 @@ There is one custom store in template. It's powered by Context API and provider.
 
 # Theme
 
-Customization of style lib of project. This section will be reviewed on several subjects.
+Customization style lib of project. This section will be reviewed on several subjects.
 
 ## Usage of Variables
 
