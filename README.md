@@ -364,5 +364,15 @@ const Login: FunctionComponent<LoginProps> = () => {
 ..
 ```
 
+# Test
+
+Can be run tests with:
+
+```
+npm test
+yarn test
+```
+
+Right now, there is issue with MaterialUI and test runs. Will be fixed later.
 
 
